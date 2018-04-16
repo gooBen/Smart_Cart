@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.productInfo">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <TextView
+           android:id="@+id/barTxt"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:hint="bar"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:textSize="50dp"
+           android:gravity="center"/>
+
+       <TextView
+           android:id="@+id/nameTxt"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:hint="name"
+           android:textSize="50dp"
+           android:gravity="center"/>
+
+       <TextView
+           android:id="@+id/priceTxt"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:hint="price"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:gravity="center"
+           android:textSize="50dp"/>
+
+   </LinearLayout>
+</android.support.constraint.ConstraintLayout>
