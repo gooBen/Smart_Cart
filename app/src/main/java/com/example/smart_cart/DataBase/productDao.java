@@ -1,4 +1,4 @@
-package com.example.smart_cart;
+package com.example.smart_cart.DataBase;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;

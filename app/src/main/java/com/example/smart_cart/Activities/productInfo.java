@@ -8,10 +8,8 @@ import android.widget.TextView;
 import com.example.smart_cart.Model.Product;
 import com.example.smart_cart.R;
 
-import org.w3c.dom.Text;
-import com.example.smart_cart.productDoItm;
+import com.example.smart_cart.DataBase.productDoItm;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class productInfo extends AppCompatActivity {
@@ -34,7 +32,5 @@ public class productInfo extends AppCompatActivity {
         bar.setText(String.valueOf(products.get(1).getBar()));
         name.setText(products.get(1).getName());
         price.setText(String.valueOf(products.get(1).getPrice()));
-
-
     }
 }
