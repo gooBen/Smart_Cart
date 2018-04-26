@@ -14,4 +14,7 @@ public interface productDao {
 
     @Insert
     void insertAll(Product... products);
+
+    @Query("SELECT * FROM product WHERE bar LIKE :bar")
+    public Product findProductWithBar(String bar);
 }

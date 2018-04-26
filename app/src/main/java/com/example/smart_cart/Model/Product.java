@@ -10,7 +10,7 @@ public class Product {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "bar")
-    private int bar;
+    private String bar;
     @ColumnInfo(name = "name")
     private String name;
     @ColumnInfo(name = "price")
@@ -19,18 +19,18 @@ public class Product {
     private String description;
 
 
-    public Product(int bar, String name, double price, String description) {
+    public Product(String bar, String name, double price, String description) {
         this.bar = bar;
         this.name = name;
         this.price = price;
         this.description = description;
     }
 
-    public int getBar() {
+    public String getBar() {
         return bar;
     }
 
-    public void setBar(int bar) {
+    public void setBar(String bar) {
         this.bar = bar;
     }
 
@@ -65,4 +65,6 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
+
+
 }

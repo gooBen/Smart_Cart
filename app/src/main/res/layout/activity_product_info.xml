@@ -5,39 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.productInfo">
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical">
-       <TextView
-           android:id="@+id/barTxt"
-           android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="fill_parent"
            android:layout_height="match_parent"
-           android:hint="bar"
-           android:layout_gravity="center"
-           android:layout_weight="1"
-           android:textSize="50dp"
-           android:gravity="center"/>
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/barTxt"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="bar"
+               android:layout_gravity="center"
+               android:layout_weight="1"
+               android:textSize="50dp"
+               android:gravity="center"/>
 
-       <TextView
-           android:id="@+id/nameTxt"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_gravity="center"
-           android:layout_weight="1"
-           android:hint="name"
-           android:textSize="50dp"
-           android:gravity="center"/>
+           <TextView
+               android:id="@+id/nameTxt"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:layout_weight="1"
+               android:hint="name"
+               android:textSize="50dp"
+               android:gravity="center"/>
 
-       <TextView
-           android:id="@+id/priceTxt"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:hint="price"
-           android:layout_gravity="center"
-           android:layout_weight="1"
-           android:gravity="center"
-           android:textSize="50dp"/>
+           <TextView
+               android:id="@+id/priceTxt"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="price"
+               android:layout_gravity="center"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:textSize="50dp"/>
 
-   </LinearLayout>
+           <TextView
+               android:id="@+id/descriptionTxt"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:hint="description"
+               android:layout_gravity="center"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:textSize="10dp"/>
+
+       </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

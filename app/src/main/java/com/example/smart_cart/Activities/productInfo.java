@@ -1,6 +1,7 @@
 package com.example.smart_cart.Activities;
 
 import android.arch.persistence.room.Room;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -18,19 +19,24 @@ public class productInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_info);
+        final Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String bar = bundle.getString("itemBar");
+
 
         productDoItm db = Room.databaseBuilder(getApplicationContext(),productDoItm.class,"production")
                 .allowMainThreadQueries()
                 .build();
+       Product item = db.productDao().findProductWithBar(bar);
 
-        List<Product> products = db.productDao().getAllProduct();
-
-        final TextView bar = findViewById(R.id.barTxt);
+        final TextView barTxt = findViewById(R.id.barTxt);
         final TextView name = findViewById(R.id.nameTxt);
         final TextView price = findViewById(R.id.priceTxt);
+        final TextView description = findViewById(R.id.descriptionTxt);
+        barTxt.setText(item.getBar());
+        name.setText(item.getName());
+        price.setText(String.valueOf(item.getPrice()));
+        description.setText(item.getDescription());
 
-        bar.setText(String.valueOf(products.get(1).getBar()));
-        name.setText(products.get(1).getName());
-        price.setText(String.valueOf(products.get(1).getPrice()));
     }
 }
