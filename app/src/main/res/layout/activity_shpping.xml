@@ -11,13 +11,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+        <Button
+            android:id="@+id/mapBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:text="Market map"
+            />
         <ListView
             android:id="@+id/productList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:transcriptMode="alwaysScroll"
-            />
+            android:transcriptMode="alwaysScroll">
+        </ListView>
         <Button
             android:id="@+id/checkOutBtn"
             android:layout_width="match_parent"

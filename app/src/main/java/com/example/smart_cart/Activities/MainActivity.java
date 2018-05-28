@@ -6,6 +6,7 @@ import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d("myTag","project running");
+
         //first create the database
         productDoItm db = Room.databaseBuilder(getApplicationContext(),productDoItm.class,"production").allowMainThreadQueries().build();
         Product product1 = new Product("9300601259373", "Australian natural spring water (1.5L)",8.8,"Spring water in NSW! And healthy recycled plastic, the water is 5 star services");
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             else{
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,ShppingActivity.class);
-                intent.putExtra("str", result.getContents());
+                intent.putExtra("IP", result.getContents());
                 startActivity(intent);
             }
         }

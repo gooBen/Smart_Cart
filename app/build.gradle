@@ -65,8 +65,12 @@ dependencies {
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:+'
 }
-dependencies{
+dependencies {
     implementation 'com.google.zxing:core:3.3.2'
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
 
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
 }
