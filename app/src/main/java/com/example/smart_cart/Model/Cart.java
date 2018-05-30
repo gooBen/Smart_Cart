@@ -38,4 +38,8 @@ public class Cart {
     public String getBarByIndex(int position){
         return CartList.get(position).getBar();
     }
+
+    public void deleteFromCart(Product product){ CartList.remove(product);}
+
+    public Product getProductByIndex(int position){return CartList.get(position);}
 }

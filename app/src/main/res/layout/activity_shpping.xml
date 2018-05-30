@@ -18,13 +18,13 @@
             android:layout_weight="7"
             android:text="Market map"
             />
-        <ListView
+
+        <com.example.smart_cart.ShoppingListView
             android:id="@+id/productList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:transcriptMode="alwaysScroll">
-        </ListView>
+            android:layout_height="wrap_content">
+        </com.example.smart_cart.ShoppingListView>
+
         <Button
             android:id="@+id/checkOutBtn"
             android:layout_width="match_parent"
