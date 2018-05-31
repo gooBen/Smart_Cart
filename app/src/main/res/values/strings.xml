@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Smart_cart</string>
+    <string name="delete">Delete</string>
+    <string name="market_map">Market map</string>
+    <string name="check_out">Check out</string>
+    <string name="start">Start</string>
+    <string name="welcome">Welcome to smart cart</string>
+    <string name="Author">Developed by Project BEnSc Group 1</string>
+    <string name="bar">Bar:</string>
+    <string name="name">Name:</string>
+    <string name="price">Price:</string>
+    <string name="description">Description:</string>
+    <string name="success">Success!</string>
+    <string name="transaction_number">Transaction Number:</string>
+    <string name="trNum">199312671486872312378130</string>
+    <string name="amount_shopping">Items Amount:</string>
+    <string name="trading_time">Transaction Time:</string>
+    <string name="items">Items</string>
+    <string name="location">Location</string>
 </resources>

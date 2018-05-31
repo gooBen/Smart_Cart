@@ -16,20 +16,25 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="7"
-            android:text="Market map"
+            android:text="@string/market_map"
             />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <com.example.smart_cart.ShoppingListView
             android:id="@+id/productList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
         </com.example.smart_cart.ShoppingListView>
-
+        </LinearLayout>
         <Button
             android:id="@+id/checkOutBtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="7"
-            android:text="Check out" />
+            android:background="#FF7256"
+            android:text="@string/check_out" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

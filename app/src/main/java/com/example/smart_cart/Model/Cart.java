@@ -42,4 +42,6 @@ public class Cart {
     public void deleteFromCart(Product product){ CartList.remove(product);}
 
     public Product getProductByIndex(int position){return CartList.get(position);}
+
+
 }

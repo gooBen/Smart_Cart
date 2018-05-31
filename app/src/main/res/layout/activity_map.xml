@@ -4,20 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".Activities.MapActivity">
 
-    <TableLayout
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </TableLayout>
-
-
-
-
-
-
-
+        android:layout_height="match_parent"
+        android:src="@mipmap/market_map" />
 
 
 </android.support.constraint.ConstraintLayout>

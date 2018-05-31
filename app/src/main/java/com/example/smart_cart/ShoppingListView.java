@@ -108,7 +108,7 @@ public class ShoppingListView extends ListView{
 
                     delete.setHeight(getMeasuredHeight()/getChildCount());
 
-                    mPopupWindow.showAtLocation(mCurrentView, Gravity.LEFT | Gravity.TOP,
+                    mPopupWindow.showAtLocation(mCurrentView, Gravity.START | Gravity.TOP,
                             location[0] + mCurrentView.getWidth(), location[1] + mCurrentView.getHeight() / 2
                                     - mPopupWindowHeight );
 

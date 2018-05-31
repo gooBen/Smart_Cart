@@ -59,50 +59,75 @@ public class ShppingActivity extends AppCompatActivity{
 
 
 
-        //test only//////////////////////////////////////////////////////////////////////////////
-        db = Room.databaseBuilder(getApplicationContext(),productDoItm.class,"production").allowMainThreadQueries().build();
-        Product product = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
-        Product product1 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
-        Product product2 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
-        Product product3 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
-        //send product to UI
-        cart.shoppeOneProduct(product);
-        cart.shoppeOneProduct(product1);
-        cart.shoppeOneProduct(product2);
-        cart.shoppeOneProduct(product3);
-        ArrayList<String> cartProduct  = cart.getProductsName();
-        adapter = new ArrayAdapter<String>(ShppingActivity.this,android.R.layout.simple_list_item_1,cartProduct);
-        productList.setAdapter(adapter);
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//        //test only//////////////////////////////////////////////////////////////////////////////
+//        db = Room.databaseBuilder(getApplicationContext(),productDoItm.class,"production").allowMainThreadQueries().build();
+//        Product product = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product1 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product2 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product3 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product4 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product5 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product6 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product7 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product8 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product9 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product10 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product11 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product12 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product13 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product14 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        Product product15 = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+//        //send product to UI
+//        cart.shoppeOneProduct(product);
+//        cart.shoppeOneProduct(product1);
+//        cart.shoppeOneProduct(product2);
+//        cart.shoppeOneProduct(product3);
+//        cart.shoppeOneProduct(product4);
+//        cart.shoppeOneProduct(product5);
+//        cart.shoppeOneProduct(product6);
+//        cart.shoppeOneProduct(product7);
+//        cart.shoppeOneProduct(product8);
+//        cart.shoppeOneProduct(product9);
+//        cart.shoppeOneProduct(product10);
+//        cart.shoppeOneProduct(product11);
+//        cart.shoppeOneProduct(product12);
+//        cart.shoppeOneProduct(product13);
+//        cart.shoppeOneProduct(product14);
+//        cart.shoppeOneProduct(product15);
+//        ArrayList<String> cartProduct  = cart.getProductsName();
+//        adapter = new ArrayAdapter<String>(ShppingActivity.this,android.R.layout.simple_list_item_1,cartProduct);
+//        productList.setAdapter(adapter);
+//        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         //get the product bar from socket
-//        handler = new Handler(){
-//            @Override
-//            public void handleMessage(Message m) {
-//                switch (m.what) {
-//                    case 1:
-//                        db = Room.databaseBuilder(getApplicationContext(),productDoItm.class,"production").allowMainThreadQueries().build();
-//                        Product product = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
-//                        //send product to UI
-//                        cart.shoppeOneProduct(product);
-//                        cartProduct = cart.getProductsName();
-//                        adapter = new ArrayAdapter<String>(ShppingActivity.this,android.R.layout.simple_list_item_1,cartProduct);
-//                        productList.setAdapter(adapter);
-//                        break;
-//                }
-//            }
-//        };
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message m) {
+                switch (m.what) {
+                    case 1:
+                        db = Room.databaseBuilder(getApplicationContext(),productDoItm.class,"production").allowMainThreadQueries().build();
+                        Product product = db.productDao().findProductWithBar("9300601259373");//m.obj.toString()
+                        //send product to UI
+                        cart.shoppeOneProduct(product);
+                        ArrayList<String> cartProduct  = cart.getProductsName();
+                        cartProduct = cart.getProductsName();
+                        adapter = new ArrayAdapter<String>(ShppingActivity.this,android.R.layout.simple_list_item_1,cartProduct);
+                        productList.setAdapter(adapter);
+                        break;
+                }
+            }
+        };
 
         //WIFI
-//        WifiManager mWifiManager = (WifiManager)this.getApplicationContext().getSystemService(WIFI_SERVICE);
-//        if(mWifiManager == null){
-//            makeText(this, "this diver not support wifi", Toast.LENGTH_SHORT).show();
-//        }
-//        else{
-//            WifiThread wifiThread = new WifiThread(handler, IP);
-//            wifiThread.start();
-//        }
+        WifiManager mWifiManager = (WifiManager)this.getApplicationContext().getSystemService(WIFI_SERVICE);
+        if(mWifiManager == null){
+            makeText(this, "this diver not support wifi", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            WifiThread wifiThread = new WifiThread(handler, IP);
+            wifiThread.start();
+        }
 
 
         //set item click event
@@ -137,6 +162,7 @@ public class ShppingActivity extends AppCompatActivity{
                 Intent intent = new Intent();
                 intent.setClass(ShppingActivity.this,Check_out.class);
                 intent.putExtra("totalCost",cart.totalCost());
+                intent.putExtra("amount",cart.ArrayCount());
                 startActivity(intent);
             }
         });
@@ -148,7 +174,8 @@ public class ShppingActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ShppingActivity.this,Check_out.class);
+                intent.setClass(ShppingActivity.this,MapActivity.class);
+                startActivity(intent);
             }
         });
     }

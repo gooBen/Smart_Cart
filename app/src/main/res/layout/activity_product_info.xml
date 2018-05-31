@@ -5,53 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.productInfo">
+
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-       <LinearLayout
-           android:layout_width="fill_parent"
-           android:layout_height="match_parent"
-           android:orientation="vertical">
-           <TextView
-               android:id="@+id/barTxt"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:hint="bar"
-               android:layout_gravity="center"
-               android:layout_weight="1"
-               android:textSize="20dp"
-               android:gravity="center"/>
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
-           <TextView
-               android:id="@+id/nameTxt"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:layout_gravity="center"
-               android:layout_weight="1"
-               android:hint="name"
-               android:textSize="50dp"
-               android:gravity="center"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:stretchColumns="1">
 
-           <TextView
-               android:id="@+id/priceTxt"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:hint="price"
-               android:layout_gravity="center"
-               android:layout_weight="1"
-               android:gravity="center"
-               android:textSize="50dp"/>
+            <TableRow
+                android:layout_marginTop="50dp">
 
-           <TextView
-               android:id="@+id/descriptionTxt"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:hint="description"
-               android:layout_gravity="center"
-               android:layout_weight="1"
-               android:gravity="center"
-               android:textSize="10dp"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/bar"
+                    android:textStyle="bold" />
 
-       </LinearLayout>
+                <TextView
+                    android:id="@+id/barTxt"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="50dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/nameTxt"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="50dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/price" />
+
+                <TextView
+                    android:id="@+id/priceTxt"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow android:layout_marginTop="50dp">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="@string/description" />
+
+                <TextView
+                    android:id="@+id/descriptionTxt"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+        </TableLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
